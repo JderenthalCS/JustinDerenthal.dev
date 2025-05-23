@@ -1,6 +1,8 @@
 import React, { useRef, useCallback } from 'react';
 import { useMousePosition } from '../hooks/useMousePosition'; // Adjust path as needed
 
+const base = process.env.PUBLIC_URL;
+
 function calculateCardRotation({ currentX, currentY, centerX, centerY, maxRotationX, maxRotationY }) {
   const deltaX = currentX - centerX;
   const deltaY = currentY - centerY;
@@ -91,7 +93,6 @@ function ProjectCard({ project }) {
   );
 }
 
-
 export default function Projects() {
   const projects = [
     {
@@ -99,29 +100,29 @@ export default function Projects() {
       description: 'A drag-and-drop JavaFX simulator for designing and testing basic electronic circuits.',
       tags: ['Java', 'JavaFX', 'Azure', 'FXML'],
       link: 'https://github.com/JderenthalCS/CSC311-Circuit-Project.git',
-      image: '/assets/projectImages/circuitsandbox.png',
+      image: `${base}/assets/projectImages/circuitsandbox.png`,
     },
     {
       title: 'PintFinder',
       description: 'Desktop app to find and rate Guinness pints worldwide with a stylized interface.',
       tags: ['Java', 'JavaFX', 'Firebase', 'HTML', 'CSS'],
       link: 'https://github.com/JderenthalCS/PintFinder.git',
-      image: '/assets/projectImages/pintfinder.png',
+      image: `${base}/assets/projectImages/pintfinder.png`,
     },
     {
       title: 'TikTok Share Predictor',
       description: 'A machine learning model trained on verified TikTok videos to predict post virality using logistic regression, binary classification, and k-fold validation.',
       tags: ['Python', 'Scikit-Learn', 'Data Science', 'ML'],
-      link: '/assets/projectPDFs/TTSharePredictor.pdf',
-      image: '/assets/projectImages/TTSharePredictor.png', 
+      link: `${base}/assets/projectPDFs/TTSharePredictor.pdf`,
+      image: `${base}/assets/projectImages/TTSharePredictor.png`,
     },
     {
       title: 'Original Portfolio Website',
       description: 'My first personal portfolio built entirely with HTML, CSS, and vanilla JavaScript. It showcased early projects and helped solidify my frontend fundamentals.',
       tags: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://github.com/JderenthalCS/JDerenthalCS.terminal', 
+      link: 'https://github.com/JderenthalCS/JDerenthalCS.terminal',
       site: 'https://jderenthalcs.github.io/JDerenthalCS.terminal/',
-      image: '/assets/projectImages/portfolioV1.png', 
+      image: `${base}/assets/projectImages/portfolioV1.png`,
     }
   ];
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+const base = process.env.PUBLIC_URL;
+
 export default function About() {
   const [showEducation, setShowEducation] = useState(true);
   const [showCareer, setShowCareer] = useState(true);
@@ -21,8 +23,8 @@ export default function About() {
           I enjoy developing things that are both useful and fun.
         </p>
         <p className="mt-4 text-textMuted text-lg">
-        I’m always learning something new and enjoy problem-solving, creating clean user experiences,
-        and building tools people can actually use.
+          I’m always learning something new and enjoy problem-solving, creating clean user experiences,
+          and building tools people can actually use.
         </p>
       </div>
 
@@ -44,9 +46,8 @@ export default function About() {
               className="mt-2 border border-border rounded-lg bg-background/60 p-4 hover:border-primary transition-all duration-300"
             >
               <ul className="text-textMuted text-lg space-y-6">
-                
-                  <li className="mb-4">
-  <img src="/assets/logos/fsc.png" alt="fsc Logo" className="w-18 h-10 mb-2" />
+                <li className="mb-4">
+                  <img src={`${base}/assets/logos/fsc.png`} alt="fsc Logo" className="w-18 h-10 mb-2" />
                   <strong>Teaching Assistant – Data Structures & Algorithms</strong><br />
                   <span className="text-sm text-textMuted">Farmingdale State College · Part-time · Feb 2025 – Present · On-site</span>
                   <ul className="list-disc list-inside ml-6 mt-1 text-base">
@@ -55,26 +56,22 @@ export default function About() {
                     <li>Work closely with the professor to enhance learning materials.</li>
                   </ul>
                 </li>
-                  <li className="mb-4">
-  <img src="/assets/logos/DataAnnotation-Tech_Logo_mini.png" alt="DataAnnotation Logo" className="w-18 h-10 mb-2" />
+                <li className="mb-4">
+                  <img src={`${base}/assets/logos/DataAnnotation-Tech_Logo_mini.png`} alt="DataAnnotation Logo" className="w-18 h-10 mb-2" />
                   <strong>Software Developer – AI Consultant</strong><br />
                   <span className="text-sm text-textMuted">DataAnnotation · Contract · Aug 2023 – Present</span>
-                  <ul className="list-disc list-inside ml-6 mt-1 text-base">
-                  </ul>
                 </li>
                 <li className="mb-4">
-  <img src="/assets/logos/vgtp.png" alt="VGTP Logo" className="w-12 h-5 mb-2" />
-  <strong>General Manager</strong><br />
-  <span className="text-sm text-textMuted">
-    Video Game Trading Post · Full-time · Aug 2018 – Sep 2023
-  </span>
-  <ul className="list-disc list-inside ml-6 mt-1 text-base">
-    <li>Oversaw daily operations, staff training, and customer engagement.</li>
-    <li>Handled finances, vendor relationships, and implemented growth strategies.</li>
-  </ul>
-</li>
-
-
+                  <img src={`${base}/assets/logos/vgtp.png`} alt="VGTP Logo" className="w-12 h-5 mb-2" />
+                  <strong>General Manager</strong><br />
+                  <span className="text-sm text-textMuted">
+                    Video Game Trading Post · Full-time · Aug 2018 – Sep 2023
+                  </span>
+                  <ul className="list-disc list-inside ml-6 mt-1 text-base">
+                    <li>Oversaw daily operations, staff training, and customer engagement.</li>
+                    <li>Handled finances, vendor relationships, and implemented growth strategies.</li>
+                  </ul>
+                </li>
               </ul>
             </motion.div>
           )}
@@ -100,14 +97,14 @@ export default function About() {
             >
               <ul className="text-textMuted text-lg space-y-2">
                 <li className="flex items-center space-x-3 list-none">
-                  <img src="/assets/logos/farmingdale.png" alt="Farmingdale Logo" className="w-12 h-12" />
+                  <img src={`${base}/assets/logos/farmingdale.png`} alt="Farmingdale Logo" className="w-12 h-12" />
                   <span><strong>Farmingdale State College</strong> — B.S. in Computer Science (Expected 2025)</span>
                 </li>
                 <li className="pl-20 list-disc list-inside">
                   Relevant Courses: Data Structures, Software Engineering, Operating Systems, Web Development
                 </li>
                 <li className="flex items-center space-x-3 mt-4 list-none">
-                  <img src="/assets/logos/nassau.png" alt="Nassau Logo" className="w-12 h-12" />
+                  <img src={`${base}/assets/logos/nassau.png`} alt="Nassau Logo" className="w-12 h-12" />
                   <span><strong>Nassau Community College</strong> — Associate's Degree, Liberal Arts and Sciences/Liberal Studies</span>
                 </li>
                 <li className="pl-20 list-disc list-inside">
