@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/JustinDerenthal.dev/static/css/main.5ad013a5.css",
+    "main.js": "/JustinDerenthal.dev/static/js/main.a144613d.js",
+    "index.html": "/JustinDerenthal.dev/index.html",
+    "main.5ad013a5.css.map": "/JustinDerenthal.dev/static/css/main.5ad013a5.css.map",
+    "main.a144613d.js.map": "/JustinDerenthal.dev/static/js/main.a144613d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ad013a5.css",
+    "static/js/main.a144613d.js"
+  ]
+}
