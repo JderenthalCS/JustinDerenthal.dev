@@ -1,13 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.glow-letter {
+  display: inline-block;
+  color: white;
+  transform-origin: bottom left;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
+
+/* Hover in: Purple + Glow + Scale */
+@keyframes letterGlow {
+  0% {
+    color: white;
+    transform: scale(1);
+    text-shadow: none;
+  }
+  50% {
+    color: #6366f1;
+    transform: scale(1.2);
+    text-shadow: 0 0 2px #6366f1, 0 0 4px #6366f1;
+  }
+  100% {
+    color: #6366f1;
+    transform: scale(1.2);
+    text-shadow: 0 0 2px #6366f1, 0 0 4px #6366f1;
+  }
+}
+
+.letter-animate {
+  animation: letterGlow 0.6s ease forwards;
+}
+
+/* Hover out: Reverse */
+@keyframes letterGlowOut {
+  0% {
+    color: #6366f1;
+    transform: scale(1.2);
+    text-shadow: 0 0 2px #6366f1, 0 0 4px #6366f1;
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+    text-shadow: none;
+  }
+}
+
+.letter-animate-out {
+  animation: letterGlowOut 0.6s ease forwards;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
