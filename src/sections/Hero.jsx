@@ -43,7 +43,7 @@ export default function Hero() {
   Hey — I’m{' '}
   <span className="relative inline-block group whitespace-nowrap">
     <span
-      className="inline-block font-semibold cursor-default"
+      className="inline-block font-semibold cursor-default whitespace-nowrap"
       onMouseEnter={() => {
         document.querySelectorAll('.glow-letter').forEach((el, i) => {
           if (i <= 15) {
