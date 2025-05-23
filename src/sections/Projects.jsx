@@ -114,7 +114,7 @@ export default function Projects() {
       description: 'A machine learning model trained on verified TikTok videos to predict post virality using logistic regression, binary classification, and k-fold validation.',
       tags: ['Python', 'Scikit-Learn', 'Data Science', 'ML'],
       link: `${base}/assets/projectPDFs/TTSharePredictor.pdf`,
-      image: `${base}/assets/projectImages/TTSharePredictor.png`,
+      image: `${base}/assets/projectImages/TTsharePredictor.png`,
     },
     {
       title: 'Original Portfolio Website',
