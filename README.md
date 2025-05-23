@@ -1,70 +1,128 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Justin Derenthal — Developer Portfolio
+![GitHub last commit](https://img.shields.io/github/last-commit/JderenthalCS/JustinDerenthal.dev)
+![GitHub repo size](https://img.shields.io/github/repo-size/JderenthalCS/JustinDerenthal.dev)
+![GitHub](https://img.shields.io/github/license/JderenthalCS/JustinDerenthal.dev)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fjderenthalcs.github.io%2FJustinDerenthal.dev)
+![Made with React](https://img.shields.io/badge/Made%20with-React-blue)
+![Hosted on GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-9cf)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Welcome to my personal portfolio website, built from scratch using **React**, **Tailwind CSS**, and **Framer Motion**. This site showcases my projects, skills, education, and work experience, all presented in a sleek, interactive UI with animated elements and subtle visual effects.
 
-### `npm run build`
+🌐 **Live Site:** [justinderenthal.dev](https://jderenthalcs.github.io/JustinDerenthal.dev)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ✨ **Dynamic hero section** with animated Vanta.js background and glowing text
+- 💻 **Skills grid** with icons and categorized display (Languages, Frameworks, Tools, etc.)
+- 🧠 **Projects section** with 3D-tilt cards, live GitHub/demo links, and screenshots
+- 🎓 **Education and Work History** accordion-style display with institution logos
+- 📱  **Responsive design** — looks great on desktop, tablet, and mobile
+- 📫 **Contact section** linking email, GitHub, LinkedIn, and YouTube
+- 🌐 **Deployed with GitHub Pages**
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠️ Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend Framework:** [React](https://reactjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Background Effects:** [Vanta.js](https://www.vantajs.com/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment:** [GitHub Pages](https://pages.github.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Folder Structure
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+my-portfolio/
+├── public/
+│   └── assets/
+│       ├── skills/               # SVG skill icons
+│       ├── logos/                # School and company logos
+│       ├── projectImages/        # Project screenshots
+│       └── favicon/              # Site favicon
+├── src/
+│   ├── components/               # Reusable components (Navbar, SkillCard, etc.)
+│   ├── sections/                 # Main site sections (Hero, About, Skills, Projects, Contact)
+│   ├── hooks/                    # Custom hooks (e.g. useMousePosition)
+│   └── App.js                    # Root component
+├── tailwind.config.js           # Tailwind configuration
+├── package.json                 # Project metadata and scripts
+└── README.md                    # You're here!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+````
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🧪 Local Development
 
-### Analyzing the Bundle Size
+To run the project locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git clone https://github.com/JderenthalCS/JustinDerenthal.dev.git
+cd JustinDerenthal.dev
+npm install
+npm start
+````
 
-### Making a Progressive Web App
+The site will be available at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🌍 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is deployed via **GitHub Pages**.
 
-### Deployment
+To deploy:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Ensure your `package.json` includes:
 
-### `npm run build` fails to minify
+   ```json
+   "homepage": "https://jderenthalcs.github.io/JustinDerenthal.dev",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+2. Deploy:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   npm run deploy
+   ```
+
+---
+
+## 📌 Credits
+
+* Portfolio design and code: **Justin Derenthal**
+* Background animation: [Vanta.js](https://www.vantajs.com/)
+* Icons: [React Icons](https://react-icons.github.io/react-icons/)
+* Fonts: [Inter](https://rsms.me/inter/)
+
+---
+
+## 📫 Contact
+
+* 📧 [JDerenthalCS@gmail.com](mailto:JDerenthalCS@gmail.com)
+* 🌐 [LinkedIn](https://www.linkedin.com/in/jderenthalcs/)
+* 💻 [GitHub](https://github.com/JderenthalCS)
+* 📺 [YouTube](https://www.youtube.com/@justinderenthal)
+
+---
+
+Thanks for visiting my portfolio! 🚀
+
+
+
