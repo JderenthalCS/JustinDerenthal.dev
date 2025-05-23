@@ -35,39 +35,41 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4">
         <div className="border border-[#22d3ee] rounded-xl p-8 bg-background/80 backdrop-blur-sm shadow-md max-w-4xl">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold mb-4 text-textMain transition-all duration-300 group"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            Hey — I’m{' '}
-            <span className="relative inline-block group">
-              <span
-                className="inline-block font-semibold cursor-default"
-                onMouseEnter={() => {
-                  document.querySelectorAll('.glow-letter').forEach((el, i) => {
-                    if (i <= 15) {
-                      el.classList.remove('letter-animate-out');
-                      void el.offsetWidth;
-                      setTimeout(() => el.classList.add('letter-animate'), i * 50);
-                    }
-                  });
-                }}
-                onMouseLeave={() => {
-                  document.querySelectorAll('.glow-letter').forEach((el) => {
-                    el.classList.remove('letter-animate');
-                    el.classList.add('letter-animate-out');
-                  });
-                }}
-              >
-                {'Justin Derenthal'.split('').map((char, i) => (
-                  <span key={i} className="glow-letter">
-                    {char === ' ' ? '\u00A0' : char}
-                  </span>
-                ))}
-              </span>
-            </span>
-          </motion.h1>
+  className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-textMain transition-all duration-300 group"
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7 }}
+>
+  Hey — I’m{' '}
+  <span className="relative inline-block group whitespace-nowrap">
+    <span
+      className="inline-block font-semibold cursor-default"
+      onMouseEnter={() => {
+        document.querySelectorAll('.glow-letter').forEach((el, i) => {
+          if (i <= 15) {
+            el.classList.remove('letter-animate-out');
+            void el.offsetWidth;
+            setTimeout(() => el.classList.add('letter-animate'), i * 50);
+          }
+        });
+      }}
+      onMouseLeave={() => {
+        document.querySelectorAll('.glow-letter').forEach((el) => {
+          el.classList.remove('letter-animate');
+          el.classList.add('letter-animate-out');
+        });
+      }}
+    >
+      {'Justin Derenthal'.split('').map((char, i) => (
+        <span key={i} className="glow-letter">
+          {char === ' ' ? '\u00A0' : char}
+        </span>
+      ))}
+    </span>
+  </span>
+</motion.h1>
+
+
 
           <motion.p
             className="text-xl md:text-2xl text-[#22d3ee] font-medium mb-6"
