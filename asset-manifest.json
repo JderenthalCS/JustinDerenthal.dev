@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/JustinDerenthal.dev/static/css/main.5ad013a5.css",
-    "main.js": "/JustinDerenthal.dev/static/js/main.e69d17d4.js",
+    "main.js": "/JustinDerenthal.dev/static/js/main.933b8a60.js",
     "index.html": "/JustinDerenthal.dev/index.html",
     "main.5ad013a5.css.map": "/JustinDerenthal.dev/static/css/main.5ad013a5.css.map",
-    "main.e69d17d4.js.map": "/JustinDerenthal.dev/static/js/main.e69d17d4.js.map"
+    "main.933b8a60.js.map": "/JustinDerenthal.dev/static/js/main.933b8a60.js.map"
   },
   "entrypoints": [
     "static/css/main.5ad013a5.css",
-    "static/js/main.e69d17d4.js"
+    "static/js/main.933b8a60.js"
   ]
 }
