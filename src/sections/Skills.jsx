@@ -1,137 +1,45 @@
-import React, { useRef, useCallback } from 'react';
-import { useMousePosition } from '../hooks/useMousePosition'; // Adjust path as needed
+import React from 'react';
+import SkillCard from '../components/SkillCard';
 
 const base = process.env.PUBLIC_URL;
 
-function calculateCardRotation({ currentX, currentY, centerX, centerY, maxRotationX, maxRotationY }) {
-  const deltaX = currentX - centerX;
-  const deltaY = currentY - centerY;
-  const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2);
-  const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-  const rotationFactor = distance / maxDistance;
-  const rotationY = ((-deltaX / centerX) * maxRotationY * rotationFactor).toFixed(2);
-  const rotationX = ((deltaY / centerY) * maxRotationX * rotationFactor).toFixed(2);
-  return { rotationX, rotationY };
-}
+const skills = {
+  Languages: [
+    { name: 'Java', icon: `${base}/assets/skills/java.svg` },
+    { name: 'JavaScript', icon: `${base}/assets/skills/javascript.svg` },
+    { name: 'Python', icon: `${base}/assets/skills/python.svg` },
+    { name: 'HTML', icon: `${base}/assets/skills/html5.svg` },
+    { name: 'CSS', icon: `${base}/assets/skills/css.svg` },
+    { name: 'Lua', icon: `${base}/assets/skills/lua.svg` },
+  ],
+  Frameworks: [
+    { name: 'React', icon: `${base}/assets/skills/react.svg` },
+    { name: 'Node.js', icon: `${base}/assets/skills/nodejs.svg` },
+    { name: 'Tailwind CSS', icon: `${base}/assets/skills/tailwindcss.svg` },
+  ],
+  Tools: [
+    { name: 'Git', icon: `${base}/assets/skills/git.svg` },
+    { name: 'Figma', icon: `${base}/assets/skills/figma.svg` },
+  ],
+  Databases: [
+    { name: 'Firebase Firestore', icon: `${base}/assets/skills/firebase.svg` },
+    { name: 'MongoDB', icon: `${base}/assets/skills/mongodb.svg` },
+    { name: 'Azure SQL', icon: `${base}/assets/skills/Microsoft_Azure.svg` },
+  ],
+  Environments: [
+    { name: 'Linux', icon: `${base}/assets/skills/linux.svg` },
+    { name: 'Kali Linux', icon: `${base}/assets/skills/kali.svg` },
+    { name: 'Intellij', icon: `${base}/assets/skills/intellijidea.svg` },
+  ],
+};
 
-function ProjectCard({ project }) {
-  const ref = useRef(null);
-
-  const update = useCallback(({ x, y }) => {
-    const card = ref.current;
-    if (!card) return;
-
-    const { width, height } = card.getBoundingClientRect();
-    const { rotationX, rotationY } = calculateCardRotation({
-      centerX: width / 2,
-      centerY: height / 2,
-      currentX: x,
-      currentY: y,
-      maxRotationX: 6,
-      maxRotationY: 8,
-    });
-
-    card.style.setProperty('--x', `${rotationX}deg`);
-    card.style.setProperty('--y', `${rotationY}deg`);
-  }, []);
-
-  useMousePosition(ref, update);
-
+export default function Skills() {
   return (
-    <div
-      ref={ref}
-      className="p-4 rounded-xl bg-surface shadow-md border border-border hover:border-primary transition-transform duration-200 will-change-transform"
-      style={{
-        transform: 'perspective(600px) rotateX(var(--x)) rotateY(var(--y))',
-        transitionDuration: '50ms',
-      }}
-      onMouseLeave={() => {
-        if (ref.current) {
-          ref.current.style.setProperty('--x', '0deg');
-          ref.current.style.setProperty('--y', '0deg');
-        }
-      }}
-    >
-      {project.image && (
-        <img
-          src={project.image}
-          alt={`${project.title} screenshot`}
-          className="w-full h-40 object-cover rounded-lg mb-4 border border-border"
-        />
-      )}
-      <h3 className="text-xl text-textMain font-semibold mb-2">{project.title}</h3>
-      <p className="text-textMuted mb-3">{project.description}</p>
-      <div className="flex flex-wrap gap-2 mb-3">
-        {project.tags.map((tag, i) => (
-          <span key={i} className="text-xs bg-background text-secondary px-2 py-1 rounded-full">
-            {tag}
-          </span>
-        ))}
-      </div>
-      <div className="flex gap-4">
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-primary hover:underline"
-        >
-          {project.link.endsWith('.pdf') ? 'Open PDF' : 'View on GitHub'}
-        </a>
-
-        {project.site && (
-          <a
-            href={project.site}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary hover:underline"
-          >
-            Visit Site
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
-
-export default function Projects() {
-  const projects = [
-    {
-      title: 'Circuit Sandbox',
-      description: 'A drag-and-drop JavaFX simulator for designing and testing basic electronic circuits.',
-      tags: ['Java', 'JavaFX', 'Azure', 'FXML'],
-      link: 'https://github.com/JderenthalCS/CSC311-Circuit-Project.git',
-      image: `${base}/assets/projectImages/circuitsandbox.png`,
-    },
-    {
-      title: 'PintFinder',
-      description: 'Desktop app to find and rate Guinness pints worldwide with a stylized interface.',
-      tags: ['Java', 'JavaFX', 'Firebase', 'HTML', 'CSS'],
-      link: 'https://github.com/JderenthalCS/PintFinder.git',
-      image: `${base}/assets/projectImages/pintfinder.png`,
-    },
-    {
-      title: 'TikTok Share Predictor',
-      description: 'A machine learning model trained on verified TikTok videos to predict post virality using logistic regression, binary classification, and k-fold validation.',
-      tags: ['Python', 'Scikit-Learn', 'Data Science', 'ML'],
-      link: `${base}/assets/projectPDFs/TTSharePredictor.pdf`,
-      image: `${base}/assets/projectImages/TTSharePredictor.png`,
-    },
-    {
-      title: 'Original Portfolio Website',
-      description: 'My first personal portfolio built entirely with HTML, CSS, and vanilla JavaScript. It showcased early projects and helped solidify my frontend fundamentals.',
-      tags: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://github.com/JderenthalCS/JDerenthalCS.terminal',
-      site: 'https://jderenthalcs.github.io/JDerenthalCS.terminal/',
-      image: `${base}/assets/projectImages/portfolioV1.png`,
-    }
-  ];
-
-  return (
-    <section id="projects" className="max-w-5xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-primary mb-6">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+    <section id="skills" className="max-w-5xl mx-auto px-4 py-16">
+      <h2 className="text-3xl font-bold text-primary mb-8">Skills</h2>
+      <div className="grid md:grid-cols-3 gap-10">
+        {Object.entries(skills).map(([category, items]) => (
+          <SkillCard key={category} category={category} items={items} />
         ))}
       </div>
     </section>
